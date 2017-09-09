@@ -1,0 +1,23 @@
+<!-- Load the Polymer.Element base class -->
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="todos-view">
+    <!-- Defines the element's style and local DOM -->
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+        </style>
+
+        <h1>New view</h1>
+    </template>
+    <script>
+        // Your new element extends the Polymer.Element base class
+        class TodosView extends Polymer.Element {
+            static get is() { return 'todos-view'; }
+        }
+        //Now, register your new custom element so the browser can use it
+        customElements.define(TodosView.is, TodosView);
+    </script>
+</dom-module>

@@ -1,0 +1,60 @@
+<head>
+    <!-- import latest release version of all components from polygit -->
+    <base href="https://polygit.org/components/">
+    <script src="webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="app-layout/app-toolbar/app-toolbar.html">
+    <link rel="import" href="./todos-view.html">
+    <custom-style>
+        <style>
+            body {
+                /* No margin on body so toolbar can span the screen */
+                margin: 0;
+            }
+        </style>
+    </custom-style>
+</head>
+<body>
+
+<dom-module id="polymer-todo-app">
+    <template>
+        <style>
+            app-toolbar {
+                /* Toolbar is the main header, so give it some color */
+                background-color: #1E88E5;
+                font-family: 'Roboto', Helvetica, sans-serif;
+                color: white;
+                --app-toolbar-font-size: 24px;
+            }
+        </style>
+
+        <app-toolbar>
+            <div main-title>POLYMER TODOS</div>
+        </app-toolbar>
+        <todos-view></todos-view>
+    </template>
+
+    <script>
+        /**
+         * @customElement
+         * @polymer
+         */
+        class PolymerTodoApp extends Polymer.Element {
+            static get is() {
+                return 'polymer-todo-app';
+            }
+
+            static get properties() {
+                return {
+                    prop1: {
+                        type: String,
+                        value: 'polymer-todo-app'
+                    }
+                };
+            }
+        }
+
+        window.customElements.define(PolymerTodoApp.is, PolymerTodoApp);
+    </script>
+</dom-module>
+
+</body>
